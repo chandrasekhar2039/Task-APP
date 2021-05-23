@@ -1,0 +1,29 @@
+{
+  "name": "task-app",
+  "version": "1.0.0",
+  "description": "A api for task manager that takes user and their tasks",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chandrasekhar2039/Task-APP.git"
+  },
+  "author": "Chandrasekhar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chandrasekhar2039/Task-APP/issues"
+  },
+  "homepage": "https://github.com/chandrasekhar2039/Task-APP#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.12.10",
+    "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
