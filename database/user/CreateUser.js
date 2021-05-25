@@ -77,4 +77,15 @@ userSchema.statics.findUser= async function(email,password){
   return user;
 }
 
+// a middleware function by default to hide data
+userSchema.methods.toJSON= function(){
+  const user = this
+  const userObject = user.toObject()
+
+  delete userObject.password
+  delete userObject.tokens
+
+  return userObject
+}
+
 module.exports = userModel = mongoose.model("user", userSchema);

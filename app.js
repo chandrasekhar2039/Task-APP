@@ -11,7 +11,9 @@ app.use(express.json());
 
 // Routers
 const userRouter = require("./routes/users/user")
+const taskRouter = require("./routes/tasks/task")
 app.use(userRouter);
+app.use(taskRouter);
 
 
 
