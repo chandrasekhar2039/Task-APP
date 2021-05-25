@@ -5,7 +5,7 @@ const userModel= require("./CreateUser");
 
 const updateUser= async (id,update)=>{
   try{
-    await userModel.findByIdAndUpdate(id,update);
+    return await userModel.findByIdAndUpdate(id,update,{new:true,runValidators:true});
   }catch(e){
     throw e;
   }
