@@ -5,6 +5,7 @@ const UserCreate= require("../../database/user/CreateUser.js")
 const {readAll, readById}= require("../../database/user/ReadUser.js")
 const updateUser = require("../../database/user/updateUser.js")
 const deleteUser = require("../../database/user/deleteUser.js")
+const deleteTask = require("../../database/task/deleteTask.js")
 
 // middle ware auth requring
 const auth = require("../../Middleware/auth.js")
@@ -90,10 +91,8 @@ router.patch("/update",auth,async (req,res)=>{
 // to delete an user data by Id
 router.delete("/delete",auth,async (req,res)=>{
   try{
+    await deleteTask.task(req.user._id);
      await deleteUser(req.user._id);
-     // let count = {
-     //   count:await userModel.countDocuments({})
-     // }
     res.send("sucessfully deleted");
   } catch(e){
     let err = {

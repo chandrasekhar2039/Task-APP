@@ -47,6 +47,13 @@ const userSchema = new mongoose.Schema({
   }]
 })
 
+// creating a virtual relation between tasks and owner
+userSchema.virtual('tasks', {
+    ref: 'task',
+    localField: '_id',
+    foreignField: 'createdBy'
+})
+
 
 //middleware to hash the password before it gets saved : it will run everytime .save method is called so its knw as middleware
 userSchema.pre("save", async function(next){
